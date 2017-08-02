@@ -5,27 +5,68 @@
 [![Build Status](https://travis-ci.org/kellyselden/ember-each-of.svg?branch=master)](https://travis-ci.org/kellyselden/ember-each-of)
 ![Ember Version](https://embadge.io/v1/badge.svg?start=2.8.0)
 
-This README outlines the details of collaborating on this Ember addon.
+This addon will give you Array destructuring-like support in {{#each}} blocks.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-each-of`
-* `npm install`
+`ember install ember-each-of`
 
-## Running
+## Overview
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Sometimes you want to bundle an object with other properties to keep them together when passing an array:
 
-## Running Tests
+```js
+// foo-component.js
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+export default Component.extend({
+  myItems: computed('items.[]', function() {
+    return this.get('items').map((item, i) => {
+      return {
+        item,
+        isSelected: i === 0
+      };
+    });
+  })
+});
+```
 
-## Building
+```hbs
+{{!-- foo-component.hbs --}}
+{{#each myItems as |item|}}
+  {{bar-component
+    item=item.item
+    isSelected=item.isSelected
+  }}
+{{/each}}
+```
 
-* `ember build`
+With this addon, you can eliminate the {{item.item}} unsightliness by going a different route using Array destructuring and {{#each-of}}:
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+```js
+// foo-component.js
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+
+export default Component.extend({
+  myItems: computed('items.[]', function() {
+    return this.get('items').map((item, i) => {
+      return [
+        item,
+        i === 0
+      ];
+    });
+  })
+});
+```
+
+```hbs
+{{!-- foo-component.hbs --}}
+{{#each-of myItems as |item isSelected|}}
+  {{bar-component
+    item=item
+    isSelected=isSelected
+  }}
+{{/each-of}}
+```
