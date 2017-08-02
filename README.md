@@ -1,5 +1,10 @@
 # ember-each-of
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kellyselden/ember-each-of.svg)](https://greenkeeper.io/)
+[![npm version](https://badge.fury.io/js/ember-each-of.svg)](https://badge.fury.io/js/ember-each-of)
+[![Build Status](https://travis-ci.org/kellyselden/ember-each-of.svg?branch=master)](https://travis-ci.org/kellyselden/ember-each-of)
+![Ember Version](https://embadge.io/v1/badge.svg?start=2.8.0)
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
