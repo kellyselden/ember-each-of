@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/each-of';
 
-const MyComponent = Ember.Component.extend({
+const MyComponent = Component.extend({
   layout,
 
   tagName: ''
