@@ -3,7 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/kellyselden/ember-each-of.svg)](https://greenkeeper.io/)
 [![npm version](https://badge.fury.io/js/ember-each-of.svg)](https://badge.fury.io/js/ember-each-of)
 [![Build Status](https://travis-ci.org/kellyselden/ember-each-of.svg?branch=master)](https://travis-ci.org/kellyselden/ember-each-of)
-![Ember Version](https://embadge.io/v1/badge.svg?start=2.8.0)
+![Ember Version](https://embadge.io/v1/badge.svg?start=2.12.0)
 
 This addon will give you Array destructuring-like support in {{#each}} blocks.
 
