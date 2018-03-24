@@ -82,7 +82,7 @@ Contributing
 ### Installation
 
 * `git clone <repository-url>`
-* `cd my-addon`
+* `cd ember-each-of`
 * `npm install`
 
 ### Linting
