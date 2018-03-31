@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | each of', function(hooks) {
@@ -11,7 +11,7 @@ module('Integration | Component | each of', function(hooks) {
       {{each-of}}
     `);
 
-    assert.equal(this.$().html().trim(), '<!---->');
+    assert.equal(find('*').innerHTML.trim(), '<!---->');
   });
 
   test('it iterates and destructures', async function(assert) {
@@ -23,7 +23,7 @@ module('Integration | Component | each of', function(hooks) {
       {{/each-of}}
     `);
 
-    assert.equal(this.$().text().trim().replace(/\n/g, '').replace(/ {2,}/g, ' '), '1 2 3 4');
+    assert.equal(find('*').textContent.trim().replace(/\n/g, '').replace(/ {2,}/g, ' '), '1 2 3 4');
   });
 
   test('it handles up to ten items', async function(assert) {
@@ -35,6 +35,6 @@ module('Integration | Component | each of', function(hooks) {
       {{/each-of}}
     `);
 
-    assert.equal(this.$().text().trim(), '1 2 3 4 5 6 7 8 9 10');
+    assert.equal(find('*').textContent.trim(), '1 2 3 4 5 6 7 8 9 10');
   });
 });
