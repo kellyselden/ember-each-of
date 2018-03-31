@@ -15,6 +15,7 @@ Installation
 ember install ember-each-of
 ```
 
+
 Overview
 ------------------------------------------------------------------------------
 
@@ -75,6 +76,7 @@ export default Component.extend({
   }}
 {{/each-of}}
 ```
+
 
 Contributing
 ------------------------------------------------------------------------------
