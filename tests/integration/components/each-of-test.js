@@ -35,6 +35,6 @@ module('Integration | Component | each of', function(hooks) {
       {{/each-of}}
     `);
 
-    assert.equal(find('*').textContent.trim(), '1 2 3 4 5 6 7 8 9 10');
+    assert.dom('*').hasText('1 2 3 4 5 6 7 8 9 10');
   });
 });
